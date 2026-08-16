@@ -5,6 +5,9 @@ const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   PORT: z.coerce.number().int().positive().default(4000),
   DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+  // Direct (non-pooled) connection used by Prisma Migrate. With Supabase this
+  // differs from DATABASE_URL; locally it is the same value.
+  DIRECT_URL: z.string().min(1, "DIRECT_URL is required"),
   JWT_SECRET: z.string().min(1, "JWT_SECRET is required"),
   FRONTEND_URL: z.string().min(1, "FRONTEND_URL is required"),
   // Shared secret for triggering Next.js on-demand ISR revalidation when admin
