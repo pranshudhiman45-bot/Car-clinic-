@@ -7,8 +7,6 @@ yarn-error.log*
 
 # Environment variables — ignore every .env variant, keep only the examples.
 # The broad pattern matters: .env.production and similar hold real secrets.
-.env
-.env.*
 !.env.example
 !.env.local.example
 
@@ -32,9 +30,9 @@ coverage/
 .DS_Store
 
 # VS Code — ignore personal settings, but share workspace config with the team
-.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 
 # Logs
 *.log
+config.bat
