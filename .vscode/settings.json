@@ -1,0 +1,33 @@
+{
+  // Only detect git repos inside this workspace. Without this, VS Code walks
+  // UP the directory tree and will attach to any stray parent repo (e.g. a
+  // stray `git init` in the home folder), flooding Source Control with
+  // hundreds of thousands of unrelated files.
+  "git.autoRepositoryDetection": "subFolders",
+
+  // Keep dependency and build output out of search, file watching, and the
+  // explorer so finding a changed file stays fast.
+  "files.exclude": {
+    "**/.next": true,
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.next/**": true,
+    "**/dist/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/pnpm-lock.yaml": true
+  },
+
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": false,
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ]
+}

@@ -31,9 +31,10 @@ coverage/
 # macOS
 .DS_Store
 
-# VS Code
+# VS Code — ignore personal settings, but share workspace config with the team
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 
 # Logs
 *.log
