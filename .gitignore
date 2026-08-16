@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+!.env.example
+!.env.local.example
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Backend build output
+dist/
+build/
+
+# Prisma
+backend/prisma/migrations/dev.db
+
+# Testing
+coverage/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log

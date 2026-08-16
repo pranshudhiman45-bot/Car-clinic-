@@ -1,0 +1,28 @@
+{
+  "name": "car-wash-platform",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @carwash/shared build && concurrently -k -n shared,backend,frontend -c gray,green,blue \"pnpm --filter @carwash/shared dev\" \"pnpm --filter backend dev\" \"pnpm --filter frontend dev\"",
+    "dev:frontend": "pnpm --filter @carwash/shared build && pnpm --filter frontend dev",
+    "dev:backend": "pnpm --filter @carwash/shared build && pnpm --filter backend dev",
+    "build": "pnpm --filter @carwash/shared build && pnpm --filter backend build && pnpm --filter frontend build",
+    "start": "concurrently -k -n backend,frontend -c green,blue \"pnpm --filter backend start\" \"pnpm --filter frontend start\"",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm --filter @carwash/shared build && pnpm -r typecheck",
+    "db:generate": "pnpm --filter backend prisma:generate",
+    "db:migrate": "pnpm --filter backend exec prisma migrate dev",
+    "db:deploy": "pnpm --filter backend prisma:deploy",
+    "db:status": "pnpm --filter backend prisma:status",
+    "db:studio": "pnpm --filter backend prisma:studio",
+    "db:seed": "pnpm --filter backend seed",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

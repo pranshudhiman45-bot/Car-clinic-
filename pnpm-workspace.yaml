@@ -1,0 +1,14 @@
+packages:
+  - frontend
+  - backend
+  - shared
+
+# Postinstall scripts are blocked by default in pnpm. These are required:
+# Prisma downloads/generates its query engine, esbuild and unrs-resolver install
+# their platform-native binaries. Nothing else is allowed to run scripts.
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  esbuild: true
+  prisma: true
+  unrs-resolver: true
